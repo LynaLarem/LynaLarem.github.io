@@ -1,0 +1,173 @@
+<title>Portfolio Lyna Larem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single narrow column, left-aligned. Hero, two featured projects, project list, skills, background, contact. */
+:root{
+  --bg:#F4F6F9; --surface:#FFFFFF; --fg:#14213D; --muted:#55627A; --line:#D9DFE8;
+  --accent:#0B7A85; --accent-ink:#FFFFFF; --tag-bg:#E4EEF1;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1626; --surface:#162135; --fg:#E8EDF5; --muted:#9AA7BD; --line:#26334C;
+  --accent:#4FC3CE; --accent-ink:#0E1626; --tag-bg:#1B2B40; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1626; --surface:#162135; --fg:#E8EDF5; --muted:#9AA7BD; --line:#26334C;
+  --accent:#4FC3CE; --accent-ink:#0E1626; --tag-bg:#1B2B40; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px;padding-block:0}
+.wrap{max-width:860px;margin-inline:auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+header.hero{padding-block:72px 56px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(40px,8vw,72px);font-weight:700;letter-spacing:-.02em;margin-top:14px}
+.hero .role{font-family:var(--display);font-size:clamp(20px,3.4vw,28px);color:var(--accent);margin-top:12px;font-weight:500}
+.hero p.intro{max-width:60ch;margin:24px 0 0;font-size:18px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);color:var(--accent);font-size:15px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:32px;font-size:14px;color:var(--muted)}
+.facts b{color:var(--fg);font-weight:600}
+
+section{padding-block:56px;border-bottom:1px solid var(--line)}
+section>h2{font-size:clamp(26px,4.5vw,34px);margin:8px 0 28px}
+
+.featured{display:grid;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px}
+.card h3{font-size:22px;margin:6px 0 10px}
+.card p{margin:0 0 16px;max-width:62ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-family:var(--mono);font-size:12.5px;background:var(--tag-bg);padding:4px 10px;border-radius:4px}
+.fit{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:14.5px;color:var(--muted)}
+
+.list{margin-top:36px;display:grid;gap:0}
+.item{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding-block:20px;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item h3{font-size:19px}
+.item p{margin:0;color:var(--muted);max-width:66ch}
+@media(min-width:720px){.item{grid-template-columns:200px minmax(0,1fr);gap:28px}}
+
+.skills{display:grid;gap:22px 40px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.skills h3{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
+.skills p{margin:0}
+
+.timeline{display:grid;gap:26px}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:2px}
+.row .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.row h3{font-size:18px}
+.row p{margin:2px 0 0;color:var(--muted);max-width:66ch}
+@media(min-width:720px){.row{grid-template-columns:150px minmax(0,1fr);gap:28px}}
+.two{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:40px}
+.two h3{font-size:18px;margin-bottom:10px}
+.two ul{margin:0;padding-left:18px}
+
+footer{padding-block:56px 72px}
+footer h2{font-size:clamp(26px,4.5vw,34px);margin:8px 0 14px}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.mail code{font-family:var(--mono);font-size:15px;background:var(--surface);border:1px solid var(--line);padding:9px 14px;border-radius:6px;overflow-wrap:anywhere;user-select:all}
+.mail button{font:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:9px 16px;border-radius:6px;border:1.5px solid var(--accent);background:transparent;color:var(--accent)}
+.note{font-size:14px;color:var(--muted);margin-top:28px}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="label">Portfolio · Constantine, Algérie</div>
+  <h1>Lyna Rouaida Larem</h1>
+  <div class="role">Informaticienne, Génie Logiciel &amp; Systèmes Intelligents</div>
+  <p class="intro">Spécialisée en développement logiciel et en intelligence artificielle, diplômée d'un Master en Ingénierie des Logiciels et des Systèmes Intelligents (Université Constantine 2, 2026). Je conçois, développe et déploie des applications web et mobiles, avec une attention particulière aux bases de données, au cloud et au DevOps. J'ai également des bases en cybersécurité.</p>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">Voir mon GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/lyna-larem" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="facts">
+    <span><b>3e</b> sur 110 en Licence</span>
+    <span>Mémoire de Master <b>19/20</b> (Excellent)</span>
+    <span>2 certificats <b>AWS</b></span>
+  </div>
+</header>
+
+<section id="projets">
+  <div class="label">Projets</div>
+  <h2>Plateformes de réservation et déploiement</h2>
+  <div class="featured">
+    <article class="card">
+      <div class="label">Projet</div>
+      <h3>Site web de réservation de restaurant</h3>
+      <p>Site de gestion de restaurant avec système de réservation en ligne. L'interface est responsive et s'adapte à tous les supports (ordinateur, tablette, téléphone).</p>
+      <ul class="tags"><li>Web</li><li>Réservation en ligne</li><li>Responsive</li></ul>
+      <div class="fit">Le principe est le même que pour une agence de voyage en ligne : un visiteur choisit, réserve et reçoit une confirmation.</div>
+    </article>
+    <article class="card">
+      <div class="label">Projet</div>
+      <h3>Déploiement DevOps d'un site e-commerce</h3>
+      <p>Déploiement et exploitation d'un site e-commerce en environnement DevOps, pour que le site soit mis en ligne et maintenu de façon fiable.</p>
+      <ul class="tags"><li>E-commerce</li><li>DevOps</li><li>Déploiement</li></ul>
+    </article>
+  </div>
+
+  <div class="list">
+    <div class="item"><div><div class="label">Projet</div><h3>Application santé &amp; bien-être</h3></div><p>Les utilisateurs s'inscrivent et renseignent leurs données quotidiennes. L'application les analyse et génère un programme personnalisé selon leurs objectifs.</p></div>
+    <div class="item"><div><div class="label">Fin d'études de Licence</div><h3>Plateforme web d'apprentissage ludique</h3></div><p>Plateforme éducative avec mécanismes de gamification, et jeu pédagogique de type Escape Room développé sous Unity.</p></div>
+    <div class="item"><div><div class="label">Projet académique</div><h3>Architecture Big Data pour l'analyse de l'apprentissage en ligne</h3></div><p>Traitements batch et streaming sur une architecture distribuée (cluster Hadoop sous Docker, HDFS, Spark), avec indicateurs d'engagement et tableaux de bord.</p></div>
+    <div class="item"><div><div class="label">Mémoire de Master</div><h3>Tolérance aux pannes dans les systèmes cyber-physiques médicaux</h3></div><p>Mécanismes de Runtime Monitoring pour la fiabilité, la résilience et la sécurité de systèmes critiques.</p></div>
+    <div class="item"><div><div class="label">Projet</div><h3>Application Android de calcul des moyennes</h3></div><p>Gestion dynamique des modules et des semestres, avec base de données locale.</p></div>
+    <div class="item"><div><div class="label">Académique</div><h3>Autres projets</h3></div><p>Infrastructure réseau d'entreprise (VLAN, messagerie, IoT), classification d'images faciales par CNN, base de données graphe Neo4j.</p></div>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="label">Compétences</div>
+  <h2>Ce que je maîtrise</h2>
+  <div class="skills">
+    <div><h3>Développement</h3><p>Web (responsive), Spring Boot, Android, Unity, Git/GitHub</p></div>
+    <div><h3>Langages</h3><p>Python, Java, JavaScript, C/C++, PHP</p></div>
+    <div><h3>Bases de données</h3><p>MySQL, MariaDB, PostgreSQL, MongoDB, Neo4j</p></div>
+    <div><h3>Cloud &amp; DevOps</h3><p>AWS (EC2, S3, RDS, Lambda), CI/CD, Jenkins, Terraform, Docker</p></div>
+    <div><h3>Données &amp; IA</h3><p>Big Data (Hadoop, Spark), Machine Learning, Deep Learning</p></div>
+    <div><h3>Réseaux &amp; outils</h3><p>Cisco Packet Tracer, bases de cybersécurité, Microsoft Office, Canva, LaTeX</p></div>
+  </div>
+</section>
+
+<section id="parcours">
+  <div class="label">Parcours</div>
+  <h2>Formation et expérience</h2>
+  <div class="timeline">
+    <div class="row"><div class="when">2024 – 2026</div><div><h3>Master Informatique, Ingénierie des Logiciels et des Systèmes Intelligents</h3><p>Université Constantine 2 Abdelhamid Mehri. Mémoire noté 19/20 (mention Excellent).</p></div></div>
+    <div class="row"><div class="when">2021 – 2024</div><div><h3>Licence Informatique, Génie Logiciel</h3><p>Université Constantine 2 Abdelhamid Mehri. Classée 3e sur 110 étudiants.</p></div></div>
+    <div class="row"><div class="when">2021</div><div><h3>Baccalauréat, Série Mathématiques</h3><p>Avec mention.</p></div></div>
+    <div class="row"><div class="when">2025 – 2026</div><div><h3>SF Medical, société de commerce médical</h3><p>Missions ponctuelles : saisie et mise à jour des fichiers clients et commandes sur Excel, avec vérification et correction des données pour assurer la cohérence du suivi.</p></div></div>
+  </div>
+  <div class="two">
+    <div><h3>Certificats</h3><ul><li>AWS Cloud Foundations (déc. 2025)</li><li>AWS Machine Learning Foundations (2026)</li></ul></div>
+    <div><h3>Langues</h3><ul><li>Arabe, langue maternelle</li><li>Français, courant</li><li>Anglais, intermédiaire</li><li>Turc, intermédiaire</li></ul></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="label">Contact</div>
+  <h2>Parlons de votre projet</h2>
+  <p>Je suis disponible pour un entretien. Le code de mes projets est sur mon GitHub.</p>
+  <div class="mail"><code id="addr">laremlyna2003@gmail.com</code><button id="copy" type="button">Copier l'adresse</button></div>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">github.com/LynaLarem</a>
+    <a class="btn" href="https://linkedin.com/in/lyna-larem" target="_blank" rel="noopener">linkedin.com/in/lyna-larem</a>
+  </div>
+  <p class="note">Téléphone : +213 562 24 88 91</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('copy'),a=document.getElementById('addr');
+  b.addEventListener('click',function(){
+    var done=function(){b.textContent='Adresse copiée';setTimeout(function(){b.textContent="Copier l'adresse"},2000)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Adresse sélectionnée'};
+    try{navigator.clipboard.writeText(a.textContent).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
